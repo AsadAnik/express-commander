@@ -1,0 +1,27 @@
+{
+  "name": "express-commander",
+  "version": "1.0.0",
+  "description": "Express Commander is making developers life more easier. When anyone making express application, then they are facing repititive work which is breaking our workflow sometimes. To resolving the issue we introduced express-commander as your friend.",
+  "main": "./cli/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -rf dist && tsc",
+    "make:model": "ts-node cli/index.ts generate:model",
+    "make:service": "ts-node cli/index.ts generate:service",
+    "make:controller": "ts-node cli/index.ts generate:controller",
+    "make:route": "ts-node cli/index.ts generate:route",
+    "make:all": "ts-node cli/index.ts generate:all",
+    "make:all:schema": "ts-node cli/index.ts generate:all:schema"
+  },
+  "author": "Asad Anik",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/commander": "^2.12.2",
+    "@types/node": "^20.8.10"
+  },
+  "dependencies": {
+    "commander": "^11.1.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  }
+}
