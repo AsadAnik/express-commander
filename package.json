@@ -2,10 +2,11 @@
   "name": "express-commander",
   "version": "1.0.0",
   "description": "Express Commander is making developers life more easier. When anyone making express application, then they are facing repititive work which is breaking our workflow sometimes. To resolving the issue we introduced express-commander as your friend.",
-  "main": "./cli/index.ts",
+  "main": "./dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rm -rf dist && tsc",
+    "start": "npm run build && node ./dist/index.js",
     "make:model": "ts-node cli/index.ts generate:model",
     "make:service": "ts-node cli/index.ts generate:service",
     "make:controller": "ts-node cli/index.ts generate:controller",
@@ -13,7 +14,15 @@
     "make:all": "ts-node cli/index.ts generate:all",
     "make:all:schema": "ts-node cli/index.ts generate:all:schema"
   },
+  "bin": {
+    "express-commander": "./dist/bin/express-commander.js"
+  },
+  "files": ["cli", "dist", "README.md"],
   "author": "Asad Anik",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AsadAnik/express-commander"
+  },
   "license": "ISC",
   "devDependencies": {
     "@types/commander": "^2.12.2",

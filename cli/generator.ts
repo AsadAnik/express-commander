@@ -9,11 +9,11 @@ import { asyncWriteFile, asyncMakeDirectory } from './utils/file.util';
  * @param type 
  * @param name 
  */
-const generateFile = async (type: string, name: string): Promise<void> => {
+const generator = async (type: string, name: string): Promise<void> => {
     try {
         const templateName = template(type, name);
-        const modelDir = joinPath(type);
-        await asyncMakeDirectory(modelDir);
+        const directory = joinPath(type);
+        await asyncMakeDirectory(directory);
 
         const fileName = makeFilePath(type, formatFileName(type, name));
         await asyncWriteFile(fileName, templateName);
@@ -24,4 +24,4 @@ const generateFile = async (type: string, name: string): Promise<void> => {
     }
 }
 
-export default generateFile;
+export default generator;

@@ -2,7 +2,7 @@ import path from 'path';
 import { dirPath } from '../config';
 
 // Define the base directories where we want to generate files
-export const baseDir = path.join(__dirname, dirPath); // This is the directory where the generator script is located
+export const baseDir = dirPath; // This is the directory where the generator script is located
 
 /**
  * ==== Joining Path Based on Type ====
