@@ -1,6 +1,6 @@
-# express-commander
+# express-commander [DEV]
 
-# Development going on
+# Development is going on
 
 ## If you wants to contribute with development
 1. Install first with `npm i` or `npm install`
