@@ -1,6 +1,6 @@
 /**
  * ----  Path of File System Localtion -----
+ * ---- [language] will be update apon with your commandline/terminal prompt ----
  */
 export const dirPath: string = process.cwd();
-
-console.log("Dir Path -- ", dirPath);
+export const language: string = 'js';

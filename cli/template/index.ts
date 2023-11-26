@@ -1,4 +1,5 @@
 import { getModelTemplate, getControllerTemplate, getRouteTemplate, getServiceTemplate } from './templates';
+import * as configModule from '../config';
 
 /**
  * ==== Get Matching Tempalate ====
@@ -8,10 +9,11 @@ import { getModelTemplate, getControllerTemplate, getRouteTemplate, getServiceTe
  */
 const getTemplate = (type: string, name: string): string => {
     let template: string;
+    const langauge: string = configModule?.language;
 
     switch(type.toLowerCase()) {
         case "model":
-            template = getModelTemplate(name);
+            template = getModelTemplate(name, langauge);
             break;
         
         case "controller":

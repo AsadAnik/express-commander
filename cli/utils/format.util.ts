@@ -7,7 +7,7 @@ import { capitalize } from './text.util';
  * @returns 
  */
 const formatFileName = (type: string, name: string): string => {
-    return type.toLowerCase() === 'model' ? capitalize(name) : name;
+    return type.toLowerCase() === 'model' ? capitalize(name) : name.toLowerCase();
 };
 
 export default formatFileName;

@@ -6,12 +6,17 @@
   "scripts": {
     "build": "rm -rf dist && tsc",
     "start": "npm run build && node ./dist/index.js",
-    "postinstall": "npm run start"
+    "postinstall": "ts-node cli/postinstall.ts",
+    "test-postinstall": "ts-node cli/postinstall.ts"
   },
   "bin": {
     "express-commander": "./dist/bin/express-commander.js"
   },
-  "files": ["cli", "dist", "README.md"],
+  "files": [
+    "cli",
+    "dist",
+    "README.md"
+  ],
   "author": "Asad Anik",
   "repository": {
     "type": "git",
@@ -20,10 +25,12 @@
   "license": "ISC",
   "devDependencies": {
     "@types/commander": "^2.12.2",
-    "@types/node": "^20.8.10"
+    "@types/node": "^20.8.10",
+    "@types/prompts": "^2.4.8"
   },
   "dependencies": {
     "commander": "^11.1.0",
+    "prompts": "^2.4.2",
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
   }

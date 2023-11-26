@@ -11,11 +11,11 @@ import { asyncWriteFile, asyncMakeDirectory } from './utils/file.util';
  */
 const generator = async (type: string, name: string): Promise<void> => {
     try {
-        const templateName = template(type, name);
-        const directory = joinPath(type);
+        const templateName: string = template(type, name);
+        const directory: string = joinPath(type);
         await asyncMakeDirectory(directory);
 
-        const fileName = makeFilePath(type, formatFileName(type, name));
+        const fileName: string = makeFilePath(type, formatFileName(type, name));
         await asyncWriteFile(fileName, templateName);
         console.log(`${capitalize(type)} ${name} created successfully in ${fileName}`);
 
