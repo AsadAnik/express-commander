@@ -11,23 +11,39 @@ import * as path from "path";
 const configPath: string = path.join(__dirname, './config/index.ts');
 
 /**
- * ---- Language Prompting ----
+ * ---- Terminal Prompting ----
  * @returns 
  */
-const languagePrompt = async (): Promise<string | boolean> => {
+const terminalPrompt = async (): Promise<Object | Boolean> => {
     try {
-        const response = await prompts({
-            type: 'autocomplete',
-            name: 'language',
-            message: 'Choose the language to your commander: ',
-            choices: [
-                { title: 'JavaScript', value: 'js' },
-                { title: 'TypeScript', value: 'ts' }
-            ],
-            initial: 'JavaScript',
-        });
+        const response = await prompts([
+            {
+                type: 'autocomplete',
+                name: 'language',
+                message: 'Choose the language to your commander: ',
+                choices: [
+                    { title: 'JavaScript', value: 'js' },
+                    { title: 'TypeScript', value: 'ts' }
+                ],
+                initial: 'JavaScript',
+            },
+            {
+                type: 'autocomplete',
+                name: 'directory',
+                message: 'Are you using (src) directory ?',
+                choices: [
+                    { title: 'Yes', value: 'yes' },
+                    { title: 'No', value: 'no' }
+                ],
+                initial: 'No',
+            }
+        ]);
 
-        return response?.language;
+        if (response) return {
+            language: response?.language,
+            directory: response?.directory
+        };
+        return false;
 
     } catch (error) {
         console.error('Error during language prompt: ', error);
@@ -36,19 +52,26 @@ const languagePrompt = async (): Promise<string | boolean> => {
 };
 
 /**
- * ---- Set/Update Language when you are selecting for it ----
+ * ---- Set/Update Language, Directory when you are selecting for it ----
  * @param language 
+ * @param directory
  */
-const setLanguage = (language: string | boolean): void => {
+const setConfigs = (language: string | boolean, directory: string | boolean): void => {
     try {
-        if (language) {
-            let configContent = fs.readFileSync(configPath, 'utf-8');
+        let configContent = fs.readFileSync(configPath, 'utf-8');
 
+        if (language) {
             // Replace the existing language value..
             configContent = configContent.replace(/export const language: string = '.*';/, `export const language: string = '${language}';`);
-
-            fs.writeFileSync(configPath, configContent, 'utf-8');
         }
+
+        if (directory) {
+            const src: string = directory === 'yes' ? 'src' : '';
+            // Updating the src value..
+            configContent = configContent.replace(/export const directory: string = '.*';/, `export const directory: string = '${src}';`);
+        }
+
+        fs.writeFileSync(configPath, configContent, 'utf-8');
 
     } catch (error) {
         console.error(`Error setting the Language: ${error}`);
@@ -61,8 +84,15 @@ const setLanguage = (language: string | boolean): void => {
  */
 (async (): Promise<void> => {
     try {
-        const language: string | boolean = await languagePrompt();
-        setLanguage(language);
+        const termResponse: object | boolean = await terminalPrompt();
+
+        if (termResponse && typeof termResponse === 'object') {
+            const language: string = Object.values(termResponse)[0];
+            const directory: string = Object.values(termResponse)[1];
+
+            // Setting Language/Directory Store for Future Use..
+            setConfigs(language, directory);
+        }
 
         /**
          * -- This is needs when we are doing something with terminal with one single process --

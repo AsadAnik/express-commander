@@ -3,7 +3,7 @@ import { dirPath } from '../config';
 import * as configModule from '../config';
 
 // Define the base directories where we want to generate files
-export const baseDir: string = dirPath; // This is the directory where the generator script is located
+export const baseDir: string = configModule?.directory === 'src' ? `${dirPath}/src` : dirPath; // This is the directory where the generator script is located
 
 /**
  * ==== Joining Path Based on Type ====
