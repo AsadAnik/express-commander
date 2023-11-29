@@ -17,15 +17,15 @@ const getTemplate = (type: string, name: string): string => {
             break;
         
         case "controller":
-            template = getControllerTemplate(name);
+            template = getControllerTemplate(name, langauge);
             break;
 
         case "service":
-            template = getServiceTemplate(name);
+            template = getServiceTemplate(name, langauge);
             break;
 
         case "route":
-            template = getRouteTemplate(name);
+            template = getRouteTemplate(name, langauge);
             break;
 
         default:
