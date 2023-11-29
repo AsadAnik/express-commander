@@ -1,10 +1,9 @@
-import fs from 'fs';
 import path from 'path';
 import generator from "../cli/generator";
 import * as configModule from '../cli/config';
 import { baseDir } from '../cli/utils/path.util';
 import { capitalize } from '../cli/utils/text.util';
-import makeFilePath, { joinPath } from '../cli/utils/path.util';
+import makeFilePath from '../cli/utils/path.util';
 import formatFileName from '../cli/utils/format.util';
 
 const langauge: string = configModule?.language;
