@@ -19,7 +19,7 @@ export const asyncMakeDirectory = async (dirPath: string): Promise<void> => {
     try {
         await fs.mkdir(dirPath, { recursive: true });
 
-    } catch (error: any) {
-        console.error(`Error while creating directory ${dirPath} -- ${error.message}`);
+    } catch (error) {
+        console.error(`Error while creating directory ${dirPath} -- ${error}`);
     }
 };

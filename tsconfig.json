@@ -3,7 +3,7 @@
       "target": "ESNext",
       "module": "CommonJS",
       "outDir": "./dist",
-      "rootDir": "./cli",
+      "rootDir": "./",
       "strict": true,
       "esModuleInterop": true,
       "skipLibCheck": true
