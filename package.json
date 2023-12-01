@@ -7,7 +7,7 @@
     "build": "rm -rf dist && tsc",
     "test": "jest",
     "start": "npm run build && node ./dist/index.js",
-    "postinstall": "node --inspect-brk dist/cli/postinstall.js",
+    "postinstall": "ts-node cli/postinstall.ts --inspect-brk",
     "test-postinstall": "ts-node dist/cli/postinstall.js --inspect-brk"
   },
   "bin": {
