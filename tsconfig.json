@@ -7,6 +7,6 @@
       "strict": true,
       "esModuleInterop": true,
       "skipLibCheck": true,
-      "types": ["node", "@types/prompts"]
+      "types": ["node", "@types/prompts", "prompts", "ts-node", "@types/node", "@types/jest"]
     }
   }

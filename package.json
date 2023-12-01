@@ -7,8 +7,8 @@
     "build": "rm -rf dist && tsc",
     "test": "jest",
     "start": "npm run build && node ./dist/index.js",
-    "postinstall": "ts-node dist/cli/postinstall.js --inspect-brk",
-    "test-postinstall": "ts-node dist/cli/postinstall.js"
+    "postinstall": "node dist/cli/postinstall.js",
+    "test-postinstall": "ts-node dist/cli/postinstall.js --inspect-brk"
   },
   "bin": {
     "express-commander": "./dist/cli/bin/express-commander.js"
