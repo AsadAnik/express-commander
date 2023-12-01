@@ -1,10 +1,17 @@
 import { Command } from 'commander';
 import generateFile from '../generator';
+import configuration from '../configuration';
 
 /**
  * -- Setup Commands with Generate Actions Root Function --
  */
 const setupCommands = (program: Command): void => {
+    program
+        .command('config')
+        .description('Configuration for your commander')
+        .action(async() => {
+            await configuration();
+        });
     program
         .command('make:model <name>')
         .description('Generate a Model')

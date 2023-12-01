@@ -8,5 +8,7 @@
       "esModuleInterop": true,
       "skipLibCheck": true,
       "types": ["node", "@types/prompts", "prompts", "ts-node", "@types/node", "@types/jest"]
-    }
+    },
+    "include": ["cli/**/*.ts"],
+    "exclude": ["node_modules"]
   }

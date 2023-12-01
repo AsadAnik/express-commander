@@ -1,21 +1,22 @@
 {
   "name": "express-commander",
-  "version": "1.2.5",
+  "version": "1.0.0",
   "description": "Express Commander is making developers life more easier. When anyone making express application, then they are facing repititive work which is breaking our workflow sometimes. To resolving the issue we introduced express-commander as your friend.",
-  "main": "./dist/cli/index.js",
   "scripts": {
     "build": "rm -rf dist && tsc",
     "test": "jest",
-    "start": "npm run build && node ./dist/index.js",
-    "postinstall": "node dist/cli/postinstall.js",
-    "test-postinstall": "ts-node dist/cli/postinstall.js --inspect-brk"
+    "start": "npm run build && node ./dist/cli/index.js",
+    "postinstall": "npx ts-node cli/postinstall.ts",
+    "test-postinstall": "ts-node dist/cli/postinstall.js --inspect-brk",
+    "config": "npx node dist/cli/index.js config",
+    "config-ts": "npx ts-node cli/index.ts config"
   },
   "bin": {
     "express-commander": "./dist/cli/bin/express-commander.js"
   },
   "files": [
-    "cli",
     "dist",
+    "cli",
     "README.md",
     "__tests__"
   ],
