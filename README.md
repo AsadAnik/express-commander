@@ -42,6 +42,18 @@ It will help you to creating `route` for your application. By default this will 
 npx express-commander make:route <name_of_your_route>
 ```
 
+#### Creation of all parts for resources (`Service`, `Controller`, `Route`),
+It will help you to creating `Service`, `Controller`, `Route` for your application. By default this will be in `JavaScript` and at `root` of your application you can see the created `Service`, `Controller`, `Route`.
+```bash
+npx express-commander make:all <name_of_your_resource>
+```
+
+#### Creation of all parts for resources with schema (`Model`, `Service`, `Controller`, `Route`),
+It will help you to creating `Model`, `Service`, `Controller`, `Route` for your application. By default this will be in `JavaScript` and at `root` of your application you can see the created `Model`, `Service`, `Controller`, `Route`.
+```bash
+npx express-commander make:all:schema <name_of_your_resource>
+```
+
 ## Changing the configurations as you like
 By default it is creating `directories` at root level of your application. If you have `src` directory on your project then you can configure the setting to `express-commander` to behave like that. Also if you are developing your application with `TypeScript` instead of `JavaScript` then you are also welcome, we have `TypeScript` supports for you and you can specifying which language you want to use by changing the configuration.
 

@@ -51,89 +51,110 @@ export const getControllerTemplate = (name: string, langauge: string = 'js'): st
     langauge === 'ts' ?
         `
 import { Request, Response, NextFunction } from 'express';
-import catchAsyncErrorHandle from "../middleware/catchAsyncErrors";
-import { ControllerFunction } from '../common/types';
 import ${capitalize(name)}Service from '../services/${name.toLocaleLowerCase()}.service';
+
+interface ControllerFunction {
+    (req: Request, res: Response, next: NextFunction): void;
+}
 
 class ${capitalize(name)}Controller {
     // Controlles of ${capitalize(name)}..
     /**
      * ---- Get All ${capitalize(name)}s ----
      */
-    static get${capitalize(name)}s: ControllerFunction = catchAsyncErrorHandle(async (
+    static get${capitalize(name)}s: ControllerFunction = async (
         _req: Request,
         res: Response,
         _next: NextFunction
     ) => {
-        res.status(200).json({
-            success: true,
-            message: "${capitalize(name)}'s Controller Ready",
-        });
-    });
+        try {
+            res.status(200).json({
+                success: true,
+                message: "${capitalize(name)}'s Controller Ready",
+            });
+        } catch(error) {
+            console.log('Error occured -- ', error);
+        }
+    };
 
     /**
      * ---- Get ${capitalize(name)} ----
      */
-    static get${capitalize(name)}: ControllerFunction = catchAsyncErrorHandle(async (
+    static get${capitalize(name)}: ControllerFunction = async (
         _req: Request,
         res: Response,
         _next: NextFunction
     ) => {
-        res.status(200).json({
-            success: true,
-            message: "${capitalize(name)}'s Controller Ready",
-        });
-    });
+        try {
+            res.status(200).json({
+                success: true,
+                message: "${capitalize(name)}'s Controller Ready",
+            });
+        } catch(error) {
+            console.log('Error occured -- ', error);
+        }
+    };
 
 
     /**
      * ---- Create ${capitalize(name)} ----
      */
-    static create${capitalize(name)}: ControllerFunction = catchAsyncErrorHandle(async (
+    static create${capitalize(name)}: ControllerFunction = async (
         _req: Request,
         res: Response,
         _next: NextFunction
     ) => {
-        res.status(200).json({
-            success: true,
-            message: "${capitalize(name)}'s Controller Ready",
-        });
-    });
+        try {
+            res.status(200).json({
+                success: true,
+                message: "${capitalize(name)}'s Controller Ready",
+            });
+        } catch(error) {
+            console.log('Error occured -- ', error);
+        }
+    };
 
     /**
      * ---- Update ${capitalize(name)} ----
      */
-    static update${capitalize(name)}: ControllerFunction = catchAsyncErrorHandle(async (
+    static update${capitalize(name)}: ControllerFunction = async (
         _req: Request,
         res: Response,
         _next: NextFunction
     ) => {
-        res.status(200).json({
-            success: true,
-            message: "${capitalize(name)}'s Controller Ready",
-        });
-    });
+        try {
+            res.status(200).json({
+                success: true,
+                message: "${capitalize(name)}'s Controller Ready",
+            });
+        } catch(error) {
+            console.log('Error occured -- ', error);
+        }
+    };
 
     /**
      * ---- Delete ${capitalize(name)} ----
      */
-    static delete${capitalize(name)}: ControllerFunction = catchAsyncErrorHandle(async (
+    static delete${capitalize(name)}: ControllerFunction = async (
         _req: Request,
         res: Response,
         _next: NextFunction
     ) => {
-        res.status(200).json({
-            success: true,
-            message: "${capitalize(name)}'s Controller Ready",
-        });
-    });
+        try {
+            res.status(200).json({
+                success: true,
+                message: "${capitalize(name)}'s Controller Ready",
+            });
+        } catch(error) {
+            console.log('Error occured -- ', error);
+        }
+    };
 }
 
 export default ${capitalize(name)}Controller;
 `
         :
         `
-const catchAsyncErrorHandle = require('../middleware/catchAsyncErrors');
 const ${capitalize(name)}Service = require('../services/${name.toLocaleLowerCase()}.service');
 
 class ${capitalize(name)}Controller {
@@ -141,73 +162,93 @@ class ${capitalize(name)}Controller {
     /**
      * ---- Get All ${capitalize(name)}s ----
      */
-    static get${capitalize(name)}s = catchAsyncErrorHandle(async (
+    static get${capitalize(name)}s = async (
         _req,
         res,
         _next
     ) => {
-        res.status(200).json({
-            success: true,
-            message: "${capitalize(name)}'s Controller Ready",
-        });
-    });
+        try {
+            res.status(200).json({
+                success: true,
+                message: "${capitalize(name)}'s Controller Ready",
+            });
+        } catch(error) {
+            console.log('Error occured -- ', error);
+        }
+    };
 
     /**
      * ---- Get ${capitalize(name)} ----
      */
-    static get${capitalize(name)} = catchAsyncErrorHandle(async (
+    static get${capitalize(name)} = async (
         _req,
         res,
         _next
     ) => {
-        res.status(200).json({
-            success: true,
-            message: "${capitalize(name)}'s Controller Ready",
-        });
-    });
+        try {
+            res.status(200).json({
+                success: true,
+                message: "${capitalize(name)}'s Controller Ready",
+            });
+        } catch(error) {
+            console.log('Error occured -- ', error);
+        }
+    };
 
 
     /**
      * ---- Create ${capitalize(name)} ----
      */
-    static create${capitalize(name)} = catchAsyncErrorHandle(async (
+    static create${capitalize(name)} = async (
         _req,
         res,
         _next
     ) => {
-        res.status(200).json({
-            success: true,
-            message: "${capitalize(name)}'s Controller Ready",
-        });
-    });
+        try {
+            res.status(200).json({
+                success: true,
+                message: "${capitalize(name)}'s Controller Ready",
+            });
+        } catch(error) {
+            console.log('Error occured -- ', error);
+        }
+    };
 
     /**
      * ---- Update ${capitalize(name)} ----
      */
-    static update${capitalize(name)} = catchAsyncErrorHandle(async (
+    static update${capitalize(name)} = async (
         _req,
         res,
         _next
     ) => {
-        res.status(200).json({
-            success: true,
-            message: "${capitalize(name)}'s Controller Ready",
-        });
-    });
+        try {
+            res.status(200).json({
+                success: true,
+                message: "${capitalize(name)}'s Controller Ready",
+            });
+        } catch(error) {
+            console.log('Error occured -- ', error);
+        }
+    };
 
     /**
      * ---- Delete ${capitalize(name)} ----
      */
-    static delete${capitalize(name)} = catchAsyncErrorHandle(async (
+    static delete${capitalize(name)} = async (
         _req,
         res,
         _next
     ) => {
-        res.status(200).json({
-            success: true,
-            message: "${capitalize(name)}'s Controller Ready",
-        });
-    });
+        try {
+            res.status(200).json({
+                success: true,
+                message: "${capitalize(name)}'s Controller Ready",
+            });
+        } catch(error) {
+            console.log('Error occured -- ', error);
+        }
+    };
 }
 
 export default ${capitalize(name)}Controller;
