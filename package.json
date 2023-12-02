@@ -18,7 +18,8 @@
     "dist",
     "cli",
     "README.md",
-    "__tests__"
+    "__tests__",
+    "imgConfig"
   ],
   "author": "Asad Anik",
   "repository": {
