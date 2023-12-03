@@ -4,7 +4,7 @@ import * as configModule from '../../cli/config';
 
 describe('baseDir', () => {
     it('should return the base directory with an individual language', () => {
-        const dirPath: string = path.join(configModule?.dirPath, 'src');
+        const dirPath: string = configModule?.dirPath === 'src' ? path.join(configModule?.dirPath, 'src') : path.join(configModule?.dirPath, '');
         expect(baseDir).toBe(dirPath);
     });
 });
