@@ -1,6 +1,6 @@
 {
   "name": "express-commander",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Express Commander is making developers life more easier. When anyone making express application, then they are facing repititive work which is breaking our workflow sometimes. To resolving the issue we introduced express-commander as your friend.",
   "scripts": {
     "build": "rm -rf dist && tsc",
