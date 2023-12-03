@@ -161,5 +161,6 @@ Check our github if you thinks that, have to contribute for helping on our proje
 | v1.0.0 | Minimal Features |
 | v1.0.3 | Testing Improved |
 | v1.0.4 | Command Shorting Feature |
+| v1.0.5 | Keywords Update |
 | `Coming Soon`| `Upcoming Feature`|
 

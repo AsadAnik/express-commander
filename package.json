@@ -1,6 +1,6 @@
 {
   "name": "express-commander",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Express Commander is making developers life more easier. When anyone making express application, then they are facing repititive work which is breaking our workflow sometimes. To resolving the issue we introduced express-commander as your friend.",
   "scripts": {
     "build": "rm -rf dist && tsc",
@@ -22,11 +22,29 @@
     "imgConfig"
   ],
   "author": "Asad Anik",
+  "keywords": [
+    "express",
+    "framework",
+    "web",
+    "rest",
+    "api",
+    "app",
+    "express-commander",
+    "commander",
+    "command",
+    "cli",
+    "args",
+    "argv",
+    "typescript",
+    "javascript",
+    "node-js",
+    "node"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/AsadAnik/express-commander"
   },
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@types/commander": "^2.12.2",
     "@types/jest": "^29.5.10",
