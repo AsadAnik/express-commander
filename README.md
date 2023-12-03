@@ -158,7 +158,8 @@ Check our github if you thinks that, have to contribute for helping on our proje
 
 | Versions  | Features |
 | ------------- |:-------------:|
-| v1.0.0      | Minimal Features |
-| `Coming Soon`| `Upcoming Feature`|
+| v1.0.0 | Minimal Features |
+| v1.0.3 | Testing Improved |
+| v1.0.4 | Command Shorting Feature |
 | `Coming Soon`| `Upcoming Feature`|
 
