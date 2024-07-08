@@ -1,6 +1,9 @@
 # express-commander [NPM]
 Express commander will help you to creating `Model`, `Controller`, `Route`, Or `Services` for your `Node-JS (Express)` application. You can make your workflow easier with this tool. You can use `JavaScript` or `TypeScript` Backend API application with this one.
 
+# Check from NPM 
+[express-commander](https://www.npmjs.com/package/express-commander)
+
 ## Installation
 To installing this, you have to pre-installed `Node-JS` on your system. Then you can create your `Express` Application with `npm init` or `yarn init`.
 
